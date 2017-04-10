@@ -27,7 +27,6 @@ void print_expression(logical_expression * expression, char * separator) {
         for (counter = 0; counter < expression->subexpressions.size(); counter++)
         {
             printf(" ");
-            //print_expression(expression->subexpressions[counter], "");
             print_expression(expression->subexpressions[counter], "");
             printf(separator);
         }

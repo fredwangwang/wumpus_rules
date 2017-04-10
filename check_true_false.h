@@ -1,33 +1,39 @@
+#pragma once
+
 #include <vector>
 
 using namespace std;
 
-class logical_expression
-{
+class logical_expression {
 public:
     char symbol[20]; // null if sentence is a more complex expression
     char connective[20]; // null if sentice is a symbol
     vector<logical_expression *> subexpressions;
 
     logical_expression();
+
     ~logical_expression();
 };
 
 
-void print_expression(logical_expression * expression, char * separator);
+void print_expression(logical_expression *expression, char *separator);
 
-logical_expression * read_expression(char * input_string);
-logical_expression * read_expression(char * input_string, long & counter);
+logical_expression *read_expression(char *input_string);
 
-long read_subexpressions(char * input_string, long & counter,
-    vector <logical_expression*> & subexpressions);
+logical_expression *read_expression(char *input_string, long &counter);
 
-void read_word(char * input_string, long & counter, char * connective);
-int valid_expression(logical_expression * expression);
-int valid_symbol(char * symbol);
+long read_subexpressions(char *input_string, long &counter,
+                         vector<logical_expression *> &subexpressions);
+
+void read_word(char *input_string, long &counter, char *connective);
+
+int valid_expression(logical_expression *expression);
+
+int valid_symbol(char *symbol);
+
 void exit_function(int value);
 
-void check_true_false(logical_expression * knowledge_base, logical_expression * statement);
+void check_true_false(logical_expression *knowledge_base, logical_expression *statement);
 
 
 
