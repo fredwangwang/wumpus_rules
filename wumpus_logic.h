@@ -8,7 +8,6 @@
 #include <iostream>
 #include <cstring>
 #include "check_true_false.h"
-#include "wumpus_board.h"
 
 using namespace std;
 
@@ -56,11 +55,8 @@ public:
     }
 
     void checkTrueFalse() {
-        board.fillBoard(knowledge_base);
         check_true_false(knowledge_base, statement);
     }
-
-    wumpus_board board;
 
 private:
     void read_wumpus_rules(char *input) {
@@ -119,8 +115,6 @@ private:
 
     logical_expression *knowledge_base;
     logical_expression *statement;
-
-
 };
 
 
